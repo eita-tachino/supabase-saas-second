@@ -19,17 +19,6 @@ const Pricing = ({ plans }) => {
   const showManageSubscriptionButton = !!user && user.is_subscribed;
 
   return (
-    // <div classNameName="w-full max-w-3xl mx-auto py-16 flex justify-around">
-    //   {plans.map((plan) => (
-    //     <div key={plan.id}>
-    //       <h2 className="text-xl">{plan.name}</h2>
-    //       <p className="text-gray-500">
-    //         💴 {plan.price} / {plan.interval}
-    //       </p>
-    //     </div>
-    //   ))}
-    // </div>
-
     // tailwind
     <div className="bg-white py-6 sm:py-8 lg:py-12">
       <div className="max-w-screen-lg px-4 md:px-8 mx-auto">

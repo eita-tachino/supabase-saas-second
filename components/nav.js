@@ -6,15 +6,15 @@ const Nav = () => {
   const [profile, setProfile] = useState(null);
   const { user } = useUser();
 
-  useEffect(() => {
-    const fetchProfile = () => {
-      const userData = user;
-      if (userData) {
-        setProfile(userData);
-      }
-    };
-    fetchProfile();
-  }, []);
+  // useEffect(() => {
+  //   const fetchProfile = () => {
+  //     const userData = user;
+  //     if (userData) {
+  //       setProfile(userData);
+  //     }
+  //   };
+  //   fetchProfile();
+  // }, []);
 
   // if (!profile) return null;
 
@@ -23,7 +23,7 @@ const Nav = () => {
       <Link href="/">
         <a>Home</a>
       </Link>
-      {!!profile && (
+      {!!user && (
         <Link href="/dashbord">
           <a className="ml-2">Dashbord</a>
         </Link>
@@ -35,8 +35,8 @@ const Nav = () => {
         <a className="ml-2">Pricing</a>
       </Link>
 
-      <Link href={profile ? "/logout" : "/login"}>
-        <a className="ml-auto"> {profile ? "Logout" : "Login"} </a>
+      <Link href={user ? "/logout" : "/login"}>
+        <a className="ml-auto"> {user ? "Logout" : "Login"} </a>
       </Link>
 
       {/* {!profile && (

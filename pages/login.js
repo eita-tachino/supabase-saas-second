@@ -1,24 +1,11 @@
-import { supabase } from "../utils/supabase";
+// import { supabase } from "../utils/supabase";
+import { useUser } from "../context/user";
 
 const Login = () => {
-  const hundleSubmit = async (event) => {
-    event.preventDefault();
+  const { login } = useUser();
 
-    const email = event.target.email.value;
-
-    await supabase.auth.signIn({ email });
-  };
   return (
     <>
-      {/* <div>
-        <h1>Log In</h1>
-        <form onSubmit={hundleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" />
-          <button type="submit">Log In</button>
-        </form>
-      </div> */}
-
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="mb-10 md:mb-16">
@@ -28,7 +15,7 @@ const Login = () => {
           </div>
 
           <form
-            onSubmit={hundleSubmit}
+            onSubmit={login}
             className="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto"
           >
             <div>
